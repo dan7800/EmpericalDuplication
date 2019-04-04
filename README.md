@@ -27,6 +27,7 @@ Using command-line, run:
 ```
 python3 main.py
 ```
+IMPORTANT!! At least the sanitize method must be called to leave the xml with a proper format and run without error the next steps.
 
 ### Running the Dedupl tool
 1. Execute `python gen_java.py` in command-line
