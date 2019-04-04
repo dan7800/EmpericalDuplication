@@ -17,12 +17,10 @@ To run [bugWebCrawler](https://github.com/dan7800/EmpericalDuplication/tree/mast
 1. Now we can run scrapy in command-line:
     1. First, in the command-line, go to the bugs_spy folder.
     2. Run scrapy:
-           
-           ```
-              scrapy crawl eclipse 
-           ```
+```
+        scrapy crawl eclipse
+```
 
-  
 The crawler will generate an xml file with the name of the project, e.g. `eclipse_reports.xml`. In addition to generating the bug report xml file, you may want to sanitize (add proper xml header/bottom) and separate the file into month chunks. 
 To do so we use the project [bugXMLSanitizer](https://github.com/dan7800/EmpericalDuplication/tree/master/bugXMLSanitizer). To do so, just open the `main.py` file and pass the absolute path where you have the .xml(s) you want to 'sanitize'. The code will read the [project]reports.xml, create new new xml files for each month and save each bug report into each particular month depending on its creation date.
 Using command-line, run: 
@@ -31,7 +29,9 @@ python3 main.py
 ```
 
 ### Running the Dedupl tool
-
+1. Execute `python gen_java.py` in command-line
+2. Copy the resulting string into the `MachineLearnerTableGenerator.generateDatasets()` method.
+3. Ensure the `AndroidXmlParser.java, EclipseXmlParser.java, OpenofficeXmlParser.java` and `MozillaXmlParser.java` point to the right path where the bug report xml file is located.
 
 ## About the development
 
